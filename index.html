@@ -293,20 +293,66 @@
 
   <script>
     const btn = document.getElementById('runaway-btn');
+    let dodgeCount = 0;
+
     const excuses = [
-      "It's not the network!",
-      "Did you clear your cache?",
+      "NOPE! Not the network!",
+      "Did you clear your cache?!",
       "Submit a ServiceNow ticket!",
-      "Packet dropped!",
-      "Try turning it off and on!",
-      "Read-Only Friday!"
+      "100% Packet Loss!",
+      "Have you tried rebooting?!",
+      "READ-ONLY FRIDAY!",
+      "It's DNS! Ask SysAdmin!",
+      "BGP Flapping — Busy!",
+      "Layer 8 Error Detected!",
+      "Error 418: I'm a teapot!",
+      "Nice try, buddy!",
+      "Go wave at someone else!"
     ];
 
-    btn.addEventListener('mouseover', () => {
-      const randomX = Math.floor(Math.random() * 260) - 130;
-      const randomY = Math.floor(Math.random() * 110) - 55;
-      btn.style.transform = `translate(${randomX}px, ${randomY}px)`;
-      btn.textContent = excuses[Math.floor(Math.random() * excuses.length)];
+    function goCrazy() {
+      dodgeCount++;
+
+      // Break out of the box and teleport anywhere on the visible screen
+      btn.style.position = 'fixed';
+      btn.style.zIndex = '9999';
+      btn.style.transition = 'all 0.08s cubic-bezier(0.18, 0.89, 0.32, 1.28)';
+
+      const maxX = window.innerWidth - btn.offsetWidth - 30;
+      const maxY = window.innerHeight - btn.offsetHeight - 30;
+      const randomX = Math.max(15, Math.floor(Math.random() * maxX));
+      const randomY = Math.max(15, Math.floor(Math.random() * maxY));
+
+      // Random spin and scale chaos
+      const randomRotate = Math.floor(Math.random() * 50) - 25;
+      const randomScale = (Math.random() * 0.45 + 0.75).toFixed(2);
+
+      btn.style.left = `${randomX}px`;
+      btn.style.top = `${randomY}px`;
+      btn.style.margin = '0';
+      btn.style.transform = `rotate(${randomRotate}deg) scale(${randomScale})`;
+
+      // Flash warning colors
+      const colors = ['#da3633', '#d29922', '#8957e5', '#f0883e', '#ff0055'];
+      btn.style.backgroundColor = colors[dodgeCount % colors.length];
+      btn.style.boxShadow = '0 0 20px rgba(255, 123, 114, 0.9)';
+
+      // Cycle excuses and show dodge counter
+      const excuse = excuses[Math.floor(Math.random() * excuses.length)];
+      btn.textContent = `🚨 ${excuse} (Dodged: ${dodgeCount})`;
+    }
+
+    // Dodge on mouse hover, mouse approach, and mobile touch
+    btn.addEventListener('mouseover', goCrazy);
+    btn.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      goCrazy();
+    });
+
+    // Fallback if someone uses Tab + Enter on their keyboard
+    btn.addEventListener('click', () => {
+      alert("🚨 ACCESS DENIED: Keyboard tabbing detected! Your incident has been downgraded to P5 and scheduled for Q4 2029.");
+      goCrazy();
     });
 
     function shredTicket() {
@@ -321,6 +367,7 @@
       input.value = "";
     }
   </script>
+
 
 </body>
 </html>
