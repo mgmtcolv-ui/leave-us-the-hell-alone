@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leave Us The Hell Alone™</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #f5f5f5;
+      text-align: center;
+      padding: 30px 15px;
+      line-height: 1.6;
+    }
+
+    .warning-banner {
+      background-color: #ff3b30;
+      color: #ffffff;
+      font-weight: 900;
+      letter-spacing: 2px;
+      padding: 12px;
+      border-radius: 8px;
+      max-width: 800px;
+      margin: 0 auto 30px auto;
+      text-transform: uppercase;
+      box-shadow: 0 4px 15px rgba(255, 59, 48, 0.4);
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #1e1e1e;
+      padding: 35px 25px;
+      border-radius: 16px;
+      border: 2px solid #333;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      margin-bottom: 10px;
+      color: #ffcc00;
+      text-transform: uppercase;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #bbbbbb;
+      margin-bottom: 25px;
+    }
+
+    .image-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin: 25px 0;
+    }
+
+    .card {
+      background: #2a2a2a;
+      border-radius: 12px;
+      padding: 12px;
+      width: 320px;
+      border: 1px solid #444;
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .card p {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: #ddd;
+      font-style: italic;
+    }
+
+    .rules {
+      text-align: left;
+      background: #252525;
+      padding: 20px 25px;
+      border-radius: 12px;
+      margin: 25px 0;
+      border-left: 5px solid #ffcc00;
+    }
+
+    .rules h2 {
+      margin-bottom: 10px;
+      color: #ffcc00;
+    }
+
+    .rules ul {
+      padding-left: 20px;
+    }
+
+    .rules li {
+      margin-bottom: 8px;
+    }
+
+    .interactive-zone {
+      margin-top: 30px;
+      padding: 25px;
+      background: #262626;
+      border-radius: 12px;
+      position: relative;
+      min-height: 180px;
+    }
+
+    button {
+      padding: 14px 24px;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+
+    #runaway-btn {
+      background-color: #ff3b30;
+      color: white;
+      position: relative;
+      margin-top: 15px;
+    }
+
+    .shredder-box {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px dashed #555;
+    }
+
+    input[type="text"] {
+      padding: 12px;
+      width: 70%;
+      max-width: 400px;
+      border-radius: 8px;
+      border: 1px solid #555;
+      background: #121212;
+      color: white;
+      font-size: 1rem;
+    }
+
+    #send-btn {
+      background-color: #ffcc00;
+      color: #121212;
+      margin-left: 8px;
+    }
+
+    #status-msg {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #ff6b6b;
+      min-height: 24px;
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 0.85rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="warning-banner">
+    ⚠️ Official Notice: Social Battery At 0% ⚠️
+  </div>
+
+  <div class="container">
+    <h1>Leave Us The Hell Alone</h1>
+    <p class="subtitle">
+      Congratulations! You have reached our exclusive perimeter of peace and quiet.
+    </p>
+
+    <div class="image-grid">
+      <div class="card">
+        <img src="https://cataas.com" alt="Grumpy Cat saying Leave Us Alone" />
+        <p>"Our current facial expression when you knock on the door."</p>
+      </div>
+      <div class="card">
+        <img src="https://placedog.net" alt="Unimpressed dog staring" />
+        <p>"Live footage of us ignoring your 'Quick Question' text."</p>
+      </div>
+    </div>
+
+    <div class="rules">
+      <h2>Approved Reasons to Contact Us:</h2>
+      <ul>
+        <li><strong>Reason 1:</strong> The building is actively on fire.</li>
+        <li><strong>Reason 2:</strong> You brought free tacos or iced coffee (leave them by the door and run).</li>
+        <li><strong>Reason 3:</strong> We just won the lottery and you are delivering the giant check.</li>
+        <li><strong>Everything Else:</strong> Please refer to the page title.</li>
+      </ul>
+    </div>
+
+    <div class="interactive-zone">
+      <h3>Still think your issue is an emergency?</h3>
+      <p>Click the button below to request 5 seconds of our attention:</p>
+      <button id="runaway-btn">Request Permission to Bother Us</button>
+
+      <div class="shredder-box">
+        <p style="margin-bottom: 10px;">Or type your "urgent" message directly into our Digital Shredder:</p>
+        <input type="text" id="complaint-input" placeholder="Hey, quick question..." />
+        <button id="send-btn" onclick="shredMessage()">Submit</button>
+        <div id="status-msg"></div>
+      </div>
+    </div>
+
+    <footer>
+      &copy; 2026 The Department of Mind Your Own Business. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    const btn = document.getElementById('runaway-btn');
+    const excuses = [
+      "Nope!",
+      "Try again next year!",
+      "We are busy staring at the wall.",
+      "404: Patience Not Found",
+      "Go away!"
+    ];
+
+    btn.addEventListener('mouseover', () => {
+      const randomX = Math.floor(Math.random() * 240) - 120;
+      const randomY = Math.floor(Math.random() * 100) - 50;
+      btn.style.transform = `translate(${randomX}px, ${randomY}px)`;
+      btn.textContent = excuses[Math.floor(Math.random() * excuses.length)];
+    });
+
+    function shredMessage() {
+      const input = document.getElementById('complaint-input');
+      const status = document.getElementById('status-msg');
+      if (!input.value.trim()) {
+        status.textContent = "You didn't even type anything. Good. Keep it that way.";
+        return;
+      }
+      status.textContent = `🗑️ "${input.value}" has been successfully ignored and deleted forever.`;
+      input.value = "";
+    }
+  </script>
+
+</body>
+</html>
