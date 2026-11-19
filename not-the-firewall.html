@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MTTI: Mean Time To Innocence™ — It's Not The Firewall</title>
+  <title>It's Not The Firewall™ — NOC Defense Portal</title>
   <style>
     * {
       box-sizing: border-box;
@@ -13,365 +13,239 @@
 
     body {
       font-family: 'Courier New', Courier, monospace;
-      background-color: #0b0f14;
+      background-color: #0d1117;
       color: #e6edf3;
       text-align: center;
-      padding: 25px 15px;
+      padding: 35px 15px;
       line-height: 1.6;
     }
 
-    .alert-bar {
-      background-color: #1f6feb;
-      color: #ffffff;
-      font-weight: bold;
-      letter-spacing: 1px;
-      padding: 12px;
-      border-radius: 6px;
-      max-width: 880px;
-      margin: 0 auto 25px auto;
-      text-transform: uppercase;
-      border: 1px solid #58a6ff;
-      box-shadow: 0 0 18px rgba(31, 111, 235, 0.5);
-    }
-
     .container {
-      max-width: 880px;
+      max-width: 720px;
       margin: 0 auto;
       background-color: #161b22;
       padding: 35px 25px;
-      border-radius: 12px;
-      border: 1px solid #30363d;
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7);
+      border-radius: 14px;
+      border: 2px solid #30363d;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: #238636;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 0.85rem;
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
     }
 
     h1 {
-      font-size: 2.2rem;
-      margin-bottom: 6px;
+      font-size: 2.5rem;
       color: #ff7b72;
+      margin-bottom: 6px;
       text-transform: uppercase;
     }
 
-    .author-tag {
-      color: #3fb950;
-      font-size: 1.05rem;
-      margin-bottom: 14px;
-    }
-
-    .subtitle {
-      font-size: 1.05rem;
+    .byline {
       color: #8b949e;
-      margin-bottom: 25px;
+      font-size: 0.95rem;
+      margin-bottom: 22px;
     }
 
-    .status-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-      gap: 12px;
-      margin-bottom: 28px;
-    }
-
-    .status-box {
+    .quote {
+      font-size: 1.1rem;
+      color: #c9d1d9;
       background: #0d1117;
-      border: 1px solid #30363d;
+      padding: 15px;
       border-radius: 8px;
-      padding: 12px;
+      border-left: 4px solid #58a6ff;
+      margin-bottom: 28px;
+      font-style: italic;
     }
 
-    .status-label {
-      font-size: 0.78rem;
-      color: #8b949e;
-      text-transform: uppercase;
-    }
-
-    .status-val {
-      font-size: 1.02rem;
-      font-weight: bold;
-      margin-top: 4px;
-    }
-
-    .green { color: #3fb950; }
-    .yellow { color: #d29922; }
-    .red { color: #ff7b72; }
-
-    .meme-grid {
+    .meme-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 18px;
       justify-content: center;
-      margin: 25px 0;
+      margin-bottom: 30px;
     }
 
-    .card {
+    .meme-card {
       background: #0d1117;
-      border-radius: 10px;
-      padding: 12px;
-      width: 260px;
       border: 1px solid #30363d;
+      border-radius: 10px;
+      padding: 10px;
+      width: 310px;
     }
 
-    .card img {
+    .meme-card img {
       width: 100%;
-      height: 210px;
+      height: 230px;
       object-fit: contain;
+      background: #000000;
       border-radius: 6px;
-      background-color: #000000;
     }
 
-    .card p {
+    .meme-card p {
       margin-top: 10px;
-      font-size: 0.88rem;
-      color: #c9d1d9;
+      font-size: 0.9rem;
+      color: #8b949e;
     }
 
-    .rules {
+    .truth-box {
       text-align: left;
       background: #0d1117;
       padding: 20px 25px;
       border-radius: 10px;
-      margin: 25px 0;
-      border-left: 4px solid #58a6ff;
-    }
-
-    .rules h2 {
-      margin-bottom: 12px;
-      color: #58a6ff;
-      font-size: 1.2rem;
-    }
-
-    .rules ul {
-      padding-left: 20px;
-    }
-
-    .rules li {
-      margin-bottom: 10px;
-      font-size: 0.95rem;
-    }
-
-    .pcap-box {
-      margin-top: 28px;
-      padding: 24px;
-      background: #0d1117;
-      border-radius: 10px;
+      margin-bottom: 30px;
       border: 1px solid #30363d;
-      text-align: left;
     }
 
-    .pcap-box h3 {
-      color: #3fb950;
+    .truth-box h2 {
+      color: #ffcc00;
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+    }
+
+    .truth-box li {
+      margin-left: 18px;
       margin-bottom: 8px;
-      text-align: center;
+      font-size: 0.98rem;
     }
 
-    .pcap-controls {
+    .action-area {
+      background: #0d1117;
+      padding: 25px 20px;
+      border-radius: 10px;
+      border: 1px dashed #ff7b72;
+    }
+
+    .action-area h3 {
+      margin-bottom: 14px;
+      color: #e6edf3;
+    }
+
+    .btn-group {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 15px;
       justify-content: center;
-      margin: 15px 0;
-    }
-
-    input[type="text"] {
-      padding: 11px;
-      width: 65%;
-      max-width: 400px;
-      border-radius: 6px;
-      border: 1px solid #30363d;
-      background: #161b22;
-      color: #58a6ff;
-      font-family: inherit;
-      font-size: 0.95rem;
+      align-items: center;
+      min-height: 60px;
     }
 
     button {
-      padding: 12px 20px;
+      padding: 13px 22px;
       font-family: inherit;
       font-size: 0.95rem;
       font-weight: bold;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
       cursor: pointer;
     }
 
-    #scan-btn {
+    #admit-btn {
       background-color: #238636;
       color: #ffffff;
     }
 
-    #scan-btn:hover {
+    #admit-btn:hover {
       background-color: #2ea043;
-    }
-
-    .terminal-output {
-      background: #010409;
-      border: 1px solid #30363d;
-      border-radius: 6px;
-      padding: 15px;
-      margin-top: 15px;
-      font-size: 0.88rem;
-      color: #c9d1d9;
-      min-height: 110px;
-      white-space: pre-line;
-    }
-
-    .blame-zone {
-      margin-top: 25px;
-      padding: 20px;
-      background: #0d1117;
-      border-radius: 10px;
-      border: 1px dashed #da3633;
-      min-height: 140px;
     }
 
     #blame-btn {
       background-color: #da3633;
-      color: white;
-      margin-top: 12px;
+      color: #ffffff;
       position: relative;
     }
 
-    .nav-links {
+    #verdict {
+      margin-top: 16px;
+      font-weight: bold;
+      color: #3fb950;
+      min-height: 24px;
+    }
+
+    .back-link {
+      display: inline-block;
       margin-top: 25px;
+      color: #58a6ff;
+      text-decoration: none;
       font-size: 0.9rem;
     }
 
-    .nav-links a {
-      color: #58a6ff;
-      text-decoration: none;
-      border: 1px solid #30363d;
-      padding: 8px 14px;
-      border-radius: 6px;
-      background: #0d1117;
-    }
-
-    .nav-links a:hover {
-      border-color: #58a6ff;
-    }
-
-    footer {
-      margin-top: 25px;
-      font-size: 0.82rem;
-      color: #8b949e;
+    .back-link:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <div class="alert-bar">
-    🛡️ M.T.T.I. DASHBOARD: Mean Time To Innocence — Firewall & Network Verified Innocent 🛡️
-  </div>
-
   <div class="container">
+    <div class="badge">● NETWORK & FIREWALL STATUS: INNOCENT</div>
     <h1>It's Not The Firewall.</h1>
-    <h3 class="author-tag">// Network & Security Engineering Defense Portal — by Mike E</h3>
-    <p class="subtitle">
-      "We didn't change anything, it just stopped working!" — Every Application Team, 5 minutes after deploying to Prod.
-    </p>
+    <div class="byline">// Courtesy of Mike E &amp; Tired Network Engineers</div>
 
-    <div class="status-grid">
-      <div class="status-box">
-        <div class="status-label">Firewall Rules</div>
-        <div class="status-val green">● PERMIT / ALLOW</div>
+    <div class="quote">
+      "We didn't change anything, it just stopped working!"<br />
+      — Every App Team, 3 minutes after pushing broken code to Prod
+    </div>
+
+    <div class="meme-row">
+      <div class="meme-card">
+        <img src="https://api.memegen.link/images/drake/checking_our_own_logs/blaming_the_firewall.png" alt="Drake blaming firewall meme" />
+        <p>App teams 0.2 seconds after their deploy fails.</p>
       </div>
-      <div class="status-box">
-        <div class="status-label">TCP 3-Way Handshake</div>
-        <div class="status-val green">● SYN → SYN-ACK → ACK</div>
-      </div>
-      <div class="status-box">
-        <div class="status-label">App Server Response</div>
-        <div class="status-val red">✖ HTTP 500 (Your Code)</div>
-      </div>
-      <div class="status-box">
-        <div class="status-label">Network Guilt</div>
-        <div class="status-val green">0.00% (Proven via PCAP)</div>
+      <div class="meme-card">
+        <img src="https://api.memegen.link/images/change-my-mind/firewalls_dont_cause_nullpointerexceptions.png" alt="Change my mind firewall meme" />
+        <p>Packets arrived safely. Your code just tripped over itself.</p>
       </div>
     </div>
 
-    <div class="meme-grid">
-      <div class="card">
-        <img src="https://api.memegen.link/images/drake/reading_their_own_application_logs/blaming_the_firewall_immediately.png" alt="Drake blaming firewall meme" />
-        <p>App teams 0.2 seconds after their deployment fails.</p>
-      </div>
-      <div class="card">
-        <img src="https://api.memegen.link/images/oprah/you_get_a_pcap/everyone_gets_a_pcap_showing_syn_ack.png" alt="Oprah PCAP meme" />
-        <p>Network Engineers joining the P1 bridge call with Wireshark open.</p>
-      </div>
-      <div class="card">
-        <img src="https://api.memegen.link/images/change-my-mind/firewalls_dont_throw_java_nullpointerexceptions.png" alt="Change my mind firewall meme" />
-        <p>Layer 4 passed your packets. Layer 7 threw up on itself.</p>
-      </div>
-    </div>
-
-    <div class="rules">
-      <h2>// The "Show Me The Logs" Firewall Checklist</h2>
+    <div class="truth-box">
+      <h2>3 Quick Facts Before You Page Us:</h2>
       <ul>
-        <li><strong>Fact 1:</strong> If you are getting an <code>HTTP 500</code>, <code>403 Forbidden</code>, or <code>SQL Timeout</code>, the firewall literally allowed your traffic through so your app could fail on its own.</li>
-        <li><strong>Fact 2:</strong> "It works on my laptop" is not a valid network topology diagram.</li>
-        <li><strong>Fact 3:</strong> Asking us to "just open any-any to test" is going to get your ticket closed faster than BGP convergence.</li>
-        <li><strong>Fact 4:</strong> Your SSL certificate expired at midnight. No, the firewall did not expire it for you.</li>
+        <li><strong>HTTP 500 = Your Bug:</strong> The firewall literally let your traffic through so your app could crash on its own.</li>
+        <li><strong>"It works on my laptop":</strong> Great. Let's plug your laptop into the data center and go home.</li>
+        <li><strong>Your SSL Cert Expired:</strong> No, the firewall did not sneak into your server at midnight and expire it.</li>
       </ul>
     </div>
 
-    <div class="pcap-box">
-      <h3>🔍 Automated PCAP & Firewall Innocence Verifier</h3>
-      <p style="text-align: center; color: #8b949e; font-size: 0.9rem;">
-        Enter your broken App Name or Port below to prove it is NOT a network or firewall issue:
-      </p>
-      <div class="pcap-controls">
-        <input type="text" id="app-input" placeholder="e.g., Payment-API or Port 8443" />
-        <button id="scan-btn" onclick="runPcap()">Run Packet Capture</button>
+    <div class="action-area">
+      <h3>What would you like to do next?</h3>
+      <div class="btn-group">
+        <button id="admit-btn" onclick="admitFault()">✅ Check Our Own App Logs</button>
+        <button id="blame-btn">🔥 Blame The Firewall Anyway</button>
       </div>
-      <div class="terminal-output" id="terminal-out">root@noc-firewall:~# Waiting for app team accusation...</div>
+      <div id="verdict"></div>
     </div>
 
-    <div class="blame-zone">
-      <p style="font-weight: bold;">Still convinced the firewall is blocking your broken code?</p>
-      <button id="blame-btn">🔥 Blame The Firewall Anyway 🔥</button>
-    </div>
-
-    <div class="nav-links">
-      <a href="index.html">← Back to Main NOC "Leave Us Alone" Portal</a>
-    </div>
-
-    <footer>
-      OSI Layer 1–4: Clean | OSI Layer 7: Your Problem • Network & Security Operations
-    </footer>
+    <a class="back-link" href="index.html">← Back to "Leave Us The Hell Alone"</a>
   </div>
 
   <script>
-    function runPcap() {
-      const input = document.getElementById('app-input').value.trim() || "Mystery-App-Prod";
-      const out = document.getElementById('terminal-out');
-
-      const appExcuses = [
-        `[PASS] Firewall Policy 'ALLOW-ALL-YOUR-MESS' matched (Action: ALLOW, Bytes: 48,290)\n[PASS] TCP 3-Way Handshake completed in 1.2ms\n[FAIL] App server '${input}' replied with: HTTP 500 NullPointerException at line 402.\n>>> VERDICT: 100% APPLICATION BUG. Go check your Git commits.`,
-        `[PASS] Routing table verified. Next-hop reachable with 0% packet loss.\n[PASS] Firewall session established (Age: 42s, End-Reason: tcp-fin-from-server)\n[FAIL] Your app closed the connection itself because its database password expired.\n>>> VERDICT: NOT THE NETWORK. Ask the DBA.`,
-        `[PASS] TLS handshake initiated through firewall without inspection drops.\n[FAIL] Server '${input}' presented a self-signed certificate that expired in 2023.\n>>> VERDICT: NOT THE FIREWALL. Renew your cert.`
-      ];
-
-      out.style.color = "#ffcc00";
-      out.textContent = `root@noc-firewall:~# tcpdump -i eth0 host ${input} -nn\nCapturing packets... analyzing firewall session table...`;
-
-      setTimeout(() => {
-        out.style.color = "#3fb950";
-        const randomResult = appExcuses[Math.floor(Math.random() * appExcuses.length)];
-        out.textContent = `root@noc-firewall:~# Results for [${input}]:\n\n${randomResult}`;
-      }, 650);
+    function admitFault() {
+      const verdict = document.getElementById('verdict');
+      verdict.textContent = "🎉 Miracle! You found a typo in your config file. Ticket closed!";
     }
 
     const blameBtn = document.getElementById('blame-btn');
-    let dodges = 0;
-    const comebacks = [
+    let count = 0;
+    const excuses = [
       "SYN-ACK went through!",
-      "Check your own logs!",
       "It's HTTP 500, bro!",
+      "Check your own logs!",
       "Your cert expired!",
-      "Show me a traceroute!",
       "Not a firewall drop!",
       "Ask the Dev team!"
     ];
 
-    function dodgeBlame() {
-      dodges++;
+    function runAway() {
+      count++;
       blameBtn.style.position = 'fixed';
       blameBtn.style.zIndex = '9999';
       blameBtn.style.transition = 'all 0.08s ease-out';
@@ -385,13 +259,13 @@
       blameBtn.style.left = `${randX}px`;
       blameBtn.style.top = `${randY}px`;
       blameBtn.style.transform = `rotate(${rot}deg)`;
-      blameBtn.textContent = `🛡️ ${comebacks[dodges % comebacks.length]} (${dodges})`;
+      blameBtn.textContent = `🛡️ ${excuses[count % excuses.length]} (${count})`;
     }
 
-    blameBtn.addEventListener('mouseover', dodgeBlame);
+    blameBtn.addEventListener('mouseover', runAway);
     blameBtn.addEventListener('touchstart', (e) => {
       e.preventDefault();
-      dodgeBlame();
+      runAway();
     });
   </script>
 
